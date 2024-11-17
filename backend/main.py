@@ -41,23 +41,23 @@ class CarFeatures(BaseModel):
 @app.post("/predict")
 async def predict_price(features: CarFeatures):
     try:
-        # Convert string inputs to appropriate types
+        # Ensure all inputs are non-empty and handle missing values
         input_data = pd.DataFrame([{
-            "Make": features.Make,
-            "Model": features.Model,
-            "Engine Fuel Type": features.Engine_Fuel_Type,
-            "Transmission Type": features.Transmission_Type,
-            "Driven_Wheels": features.Driven_Wheels,
-            "Market Category": features.Market_Category,
-            "Vehicle Size": features.Vehicle_Size,
-            "Vehicle Style": features.Vehicle_Style,
-            "Year": int(features.Year),
-            "Engine HP": float(features.Engine_HP),
-            "Engine Cylinders": float(features.Engine_Cylinders),
-            "Number of Doors": float(features.Number_of_Doors),
-            "highway MPG": int(features.highway_MPG),
-            "city mpg": int(features.city_mpg),
-            "Popularity": int(features.Popularity)
+            "Make": features.Make or "Unknown",
+            "Model": features.Model or "Unknown",
+            "Engine Fuel Type": features.Engine_Fuel_Type or "Unknown",
+            "Transmission Type": features.Transmission_Type or "Unknown",
+            "Driven_Wheels": features.Driven_Wheels or "Unknown",
+            "Market Category": features.Market_Category or "Unknown",
+            "Vehicle Size": features.Vehicle_Size or "Unknown",
+            "Vehicle Style": features.Vehicle_Style or "Unknown",
+            "Year": int(features.Year) if features.Year else 2000,  # Default to 2000 if empty
+            "Engine HP": float(features.Engine_HP) if features.Engine_HP else 100.0,  # Default to 100.0
+            "Engine Cylinders": float(features.Engine_Cylinders) if features.Engine_Cylinders else 4.0,  # Default to 4.0
+            "Number of Doors": float(features.Number_of_Doors) if features.Number_of_Doors else 4.0,  # Default to 4.0
+            "highway MPG": int(features.highway_MPG) if features.highway_MPG else 25,  # Default to 25
+            "city mpg": int(features.city_mpg) if features.city_mpg else 20,  # Default to 20
+            "Popularity": int(features.Popularity) if features.Popularity else 1000  # Default to 1000
         }])
 
         # Predict using the loaded model
