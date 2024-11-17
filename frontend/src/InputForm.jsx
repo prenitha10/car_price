@@ -2,16 +2,21 @@ import React, { useState } from "react";
 
 const InputForm = ({ onPredict }) => {
   const [formData, setFormData] = useState({
-    make: "",
-    model: "",
-    year: "",
-    fuel_type: "",
-    transmission: "",
-    driven_wheels: "",
-    engine_hp: "",
-    engine_cylinders: "",
-    highway_mpg: "",
-    city_mpg: "",
+    Make: "",
+    Model: "",
+    Year: "",
+    "Engine_Fuel_Type": "",
+    "Transmission_Type": "",
+    "Driven_Wheels": "",
+    "Market_Category": "",
+    "Vehicle_Size": "",
+    "Vehicle_Style": "",
+    "Engine_HP": "",
+    "Engine_Cylinders": "",
+    "Number_of_Doors": "",
+    "highway_MPG": "",
+    "city_mpg": "",
+    Popularity: "",
   });
 
   const handleChange = (e) => {
@@ -29,71 +34,106 @@ const InputForm = ({ onPredict }) => {
       <div className="grid grid-cols-2 gap-4">
         <input
           type="text"
-          name="make"
+          name="Make"
           placeholder="Make"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
           type="text"
-          name="model"
+          name="Model"
           placeholder="Model"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
           type="number"
-          name="year"
+          name="Year"
           placeholder="Year"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
           type="text"
-          name="fuel_type"
+          name="Engine Fuel Type"
           placeholder="Fuel Type"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
           type="text"
-          name="transmission"
+          name="Transmission Type"
           placeholder="Transmission"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
           type="text"
-          name="driven_wheels"
+          name="Driven_Wheels"
           placeholder="Driven Wheels"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
+          type="text"
+          name="Market Category"
+          placeholder="Market Category"
+          onChange={handleChange}
+          className="border p-2 rounded"
+        />
+        <input
+          type="text"
+          name="Vehicle Size"
+          placeholder="Vehicle Size"
+          onChange={handleChange}
+          className="border p-2 rounded"
+        />
+        <input
+          type="text"
+          name="Vehicle Style"
+          placeholder="Vehicle Style"
+          onChange={handleChange}
+          className="border p-2 rounded"
+        />
+        <input
           type="number"
-          name="engine_hp"
+          name="Engine HP"
           placeholder="Engine HP"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
           type="number"
-          name="engine_cylinders"
+          name="Engine Cylinders"
           placeholder="Engine Cylinders"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
           type="number"
-          name="highway_mpg"
+          name="Number of Doors"
+          placeholder="Number of Doors"
+          onChange={handleChange}
+          className="border p-2 rounded"
+        />
+        <input
+          type="number"
+          name="highway MPG"
           placeholder="Highway MPG"
           onChange={handleChange}
           className="border p-2 rounded"
         />
         <input
           type="number"
-          name="city_mpg"
+          name="city mpg"
           placeholder="City MPG"
+          onChange={handleChange}
+          className="border p-2 rounded"
+        />
+        <input
+          type="number"
+          name="Popularity"
+          placeholder="Popularity"
           onChange={handleChange}
           className="border p-2 rounded"
         />
