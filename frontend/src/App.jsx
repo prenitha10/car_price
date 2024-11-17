@@ -6,7 +6,7 @@ const App = () => {
   const [result, setResult] = useState(null);
 
   const handlePrediction = async (data) => {
-    const response = await fetch("http://127.0.0.1:8000", {
+    const response = await fetch("https://car-price-piy5.onrender.com/predict", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
