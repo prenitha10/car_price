@@ -3,3 +3,4 @@ numpy
 joblib
 pydantic
 uvicorn
+scipy
