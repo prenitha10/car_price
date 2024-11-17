@@ -4,3 +4,4 @@ joblib
 pydantic
 uvicorn
 scikit-learn
+pandas
